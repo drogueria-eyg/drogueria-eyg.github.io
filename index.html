@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Droguería EyG</title>
+<meta name="description" content="Droguería EyG — distribución de productos para el sector salud.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{ --teal:#048782; --teal-dark:#036561; --ink:#0f2a29; --paper:#f4faf9; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'Archivo',system-ui,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(120% 120% at 50% -10%, #0a9a94 0%, var(--teal) 42%, var(--teal-dark) 100%);
+    min-height:100dvh;
+    display:flex;align-items:center;justify-content:center;
+    padding:32px;
+  }
+  .card{
+    width:100%;max-width:560px;text-align:center;color:#fff;
+  }
+  .mono{
+    width:96px;height:96px;margin:0 auto 28px;
+    border:3px solid rgba(255,255,255,.9);border-radius:22px;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:38px;letter-spacing:1px;
+    backdrop-filter:blur(2px);
+  }
+  h1{font-size:clamp(30px,7vw,48px);font-weight:800;letter-spacing:-.5px}
+  h1 span{opacity:.72;font-weight:600}
+  .rule{width:54px;height:4px;background:rgba(255,255,255,.8);border-radius:4px;margin:22px auto}
+  p{font-size:clamp(15px,3.6vw,18px);line-height:1.6;color:rgba(255,255,255,.92);max-width:44ch;margin:0 auto}
+  .soon{
+    display:inline-block;margin-top:30px;padding:11px 22px;
+    border:1.5px solid rgba(255,255,255,.55);border-radius:999px;
+    font-weight:600;font-size:14px;letter-spacing:.3px;color:#fff;
+  }
+  footer{margin-top:40px;font-size:13px;color:rgba(255,255,255,.7)}
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="mono">EyG</div>
+    <h1>Droguería <span>EyG</span></h1>
+    <div class="rule"></div>
+    <p>Distribución de productos para el sector salud. Estamos renovando nuestro sitio.</p>
+    <span class="soon">Sitio en construcción</span>
+    <footer>© Droguería EyG</footer>
+  </main>
+</body>
+</html>
