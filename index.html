@@ -1,56 +1,250 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Droguería EyG</title>
-<meta name="description" content="Droguería EyG — distribución de productos para el sector salud.">
+<title>Droguería EyG — El respaldo detrás de la salud</title>
+<meta name="description" content="Droguería EyG · Distribución mayorista de medicamentos, insumos médicos y descartables para instituciones de salud. Rosario, desde 2019.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#06413E"/><text x="50" y="60" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="34" fill="#fff">E<tspan fill="#5FC8BF">y</tspan>G</text></svg>
+</template>
 <style>
-  :root{ --teal:#048782; --teal-dark:#036561; --ink:#0f2a29; --paper:#f4faf9; }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{
-    font-family:'Archivo',system-ui,sans-serif;
-    color:var(--ink);
-    background:
-      radial-gradient(120% 120% at 50% -10%, #0a9a94 0%, var(--teal) 42%, var(--teal-dark) 100%);
-    min-height:100dvh;
-    display:flex;align-items:center;justify-content:center;
-    padding:32px;
+  :root{
+    --teal:#048782; --deep:#04635F; --forest:#06413E; --mid:#0AA89F; --aqua:#5FC8BF;
+    --water:#E2F1EF; --blue:#0A3D5E; --coral:#EC8B5E; --ink:#0E1F1D; --slate:#5F716E;
+    --muted:#8A9A97; --line:#E1E8E6; --paper:#FBFCFB;
   }
-  .card{
-    width:100%;max-width:560px;text-align:center;color:#fff;
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Archivo','Helvetica Neue',Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:var(--teal)}
+  a:hover{color:var(--deep)}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+  .btn{display:inline-block;font-weight:700;font-size:16px;padding:15px 28px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:background .18s,border-color .18s,color .18s}
+  .btn-accent{background:var(--coral);color:#fff;border-color:var(--coral)}
+  .btn-accent:hover{background:#DE7A4B;border-color:#DE7A4B;color:#fff}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+  .btn-ghost:hover{background:rgba(255,255,255,.12);color:#fff}
+  .btn-teal{background:var(--teal);color:#fff;border-color:var(--teal);padding:11px 20px;font-size:14px}
+  .btn-teal:hover{background:var(--deep);border-color:var(--deep);color:#fff}
+  .kicker{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--teal);font-weight:700}
+
+  /* HEADER / HERO */
+  .hero{position:relative;overflow:hidden;background:var(--forest);color:#EAF6F4}
+  .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62}
+  .hero-veil{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,65,62,.9) 55%,rgba(8,64,82,.82) 80%,rgba(9,52,82,.9) 100%)}
+  nav{position:relative;display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  nav .links{display:flex;align-items:center;gap:30px}
+  nav .links a{color:#EAF6F4;font-size:15px;font-weight:600}
+  nav .links a:hover{color:#BFF0EA}
+  .menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer}
+  .menu-btn span{width:24px;height:2px;background:#fff}
+  .mobile-menu{display:none}
+  .mobile-menu.open{display:block}
+  .mobile-menu{position:relative;padding:8px 0 20px}
+  .mobile-menu a{display:block;color:#EAF6F4;font-size:17px;font-weight:600;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .mobile-menu a.cta-m{border-bottom:0;margin-top:14px;text-align:center;background:var(--teal);color:#fff;border-radius:999px;padding:14px}
+  .hero-inner{position:relative;max-width:640px;padding:64px 0 104px}
+  .badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#BFE6E0;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:22px}
+  .hero h1{font-weight:800;font-size:56px;line-height:1.04;letter-spacing:-1.6px;color:#fff;margin:0 0 20px}
+  .hero p{font-size:19px;line-height:1.55;color:#DCEEEA;margin:0 0 32px;max-width:540px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* SECTIONS */
+  section{padding:80px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
+  .sec-head h2{font-weight:800;font-size:36px;letter-spacing:-0.7px;margin:12px 0 10px}
+  .sec-head p{color:var(--slate);font-size:17px;margin:0}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .tile{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;transition:transform .18s,box-shadow .18s}
+  .tile:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(14,31,29,.1)}
+  .ic{width:58px;height:58px;border-radius:16px;background:linear-gradient(145deg,var(--mid),var(--aqua));display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .tile h3{font-weight:800;font-size:20px;margin:0 0 8px}
+  .tile p{color:var(--slate);font-size:15px;margin:0}
+
+  /* NOSOTROS */
+  .about{background:var(--water);border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+  .about-txt{padding:56px 48px}
+  .about-txt h2{font-weight:800;font-size:32px;letter-spacing:-0.6px;margin:0 0 14px;line-height:1.15}
+  .about-txt p{color:#3E5450;font-size:16px;margin:0 0 28px}
+  .stats{display:flex;gap:40px;flex-wrap:wrap}
+  .stats .n{font-weight:800;font-size:36px;color:var(--teal);line-height:1}
+  .stats .l{font-size:13px;color:var(--slate);font-weight:600;margin-top:4px}
+  .about-img{position:relative;min-height:340px;background:var(--deep)}
+  .about-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  /* CTA */
+  .cta{position:relative;overflow:hidden;background:linear-gradient(118deg,#06413E,#048782 55%,#0A3D5E);text-align:center;color:#fff}
+  .cta h2{font-weight:800;font-size:38px;letter-spacing:-0.7px;margin:0 0 12px}
+  .cta p{color:#CFEBE7;font-size:18px;margin:0 0 28px}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#9FB4B0}
+  .foot{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;padding:52px 0;flex-wrap:wrap}
+  .foot-cols{display:flex;gap:56px;flex-wrap:wrap}
+  .foot-cols .col span:first-child{color:#fff;font-weight:700;display:block;margin-bottom:10px}
+  .foot-cols .col span{display:block;font-size:14px;margin-bottom:7px}
+  .foot-cols .col a{color:#9FB4B0}
+  .foot-cols .col a:hover{color:#BFF0EA}
+  .copy{border-top:1px solid rgba(255,255,255,.1);padding:20px 0;font-size:13px;color:#6E827E;text-align:center}
+
+  @media (max-width:860px){
+    .wrap{padding:0 22px}
+    nav .links{display:none}
+    .menu-btn{display:flex}
+    .hero h1{font-size:38px;letter-spacing:-1px}
+    .hero p{font-size:16px}
+    .hero-inner{padding:40px 0 64px}
+    .hero-cta .btn{flex:1;text-align:center}
+    section{padding:52px 0}
+    .sec-head h2{font-size:27px}
+    .grid3{grid-template-columns:1fr}
+    .about{grid-template-columns:1fr}
+    .about-txt{padding:36px 26px}
+    .about-img{min-height:240px}
+    .cta h2{font-size:27px}
   }
-  .mono{
-    width:96px;height:96px;margin:0 auto 28px;
-    border:3px solid rgba(255,255,255,.9);border-radius:22px;
-    display:flex;align-items:center;justify-content:center;
-    font-weight:800;font-size:38px;letter-spacing:1px;
-    backdrop-filter:blur(2px);
-  }
-  h1{font-size:clamp(30px,7vw,48px);font-weight:800;letter-spacing:-.5px}
-  h1 span{opacity:.72;font-weight:600}
-  .rule{width:54px;height:4px;background:rgba(255,255,255,.8);border-radius:4px;margin:22px auto}
-  p{font-size:clamp(15px,3.6vw,18px);line-height:1.6;color:rgba(255,255,255,.92);max-width:44ch;margin:0 auto}
-  .soon{
-    display:inline-block;margin-top:30px;padding:11px 22px;
-    border:1.5px solid rgba(255,255,255,.55);border-radius:999px;
-    font-weight:600;font-size:14px;letter-spacing:.3px;color:#fff;
-  }
-  footer{margin-top:40px;font-size:13px;color:rgba(255,255,255,.7)}
 </style>
 </head>
 <body>
-  <main class="card">
-    <div class="mono">EyG</div>
-    <h1>Droguería <span>EyG</span></h1>
-    <div class="rule"></div>
-    <p>Distribución de productos para el sector salud. Estamos renovando nuestro sitio.</p>
-    <span class="soon">Sitio en construcción</span>
-    <footer>© Droguería EyG</footer>
-  </main>
+
+  <header class="hero">
+    <img class="hero-bg" src="assets/img/puente-parana.png" alt="Puente sobre el Paraná, Rosario, en semitono">
+    <div class="hero-veil"></div>
+    <div class="wrap">
+      <nav>
+        <svg width="210" viewBox="0 0 500 182" xmlns="http://www.w3.org/2000/svg" aria-label="Droguería EyG">
+          <text x="125" y="98" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="76"><tspan fill="#FFFFFF">E</tspan><tspan dx="6" fill="#5FC8BF">y</tspan><tspan dx="4" fill="#FFFFFF">G</tspan></text>
+          <rect x="41" y="123" width="168" height="30" rx="15" fill="none" stroke="#5FC8BF" stroke-width="1.3"></rect>
+          <text x="125" y="144" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="500" font-size="14" letter-spacing="4.5" fill="#EAF6F4">DROGUERÍA</text>
+          <line x1="248" y1="46" x2="248" y2="150" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+          <text x="276" y="90" font-family="Archivo,sans-serif" font-weight="400" font-size="13" letter-spacing="2.6" fill="#7FBEB6">EL RESPALDO</text>
+          <text x="276" y="114" font-family="Archivo,sans-serif" font-weight="400" font-size="13" letter-spacing="2.6" fill="#7FBEB6">DETRÁS DE LA SALUD</text>
+        </svg>
+        <div class="links">
+          <a href="#nosotros">Nosotros</a>
+          <a href="#areas">Qué distribuimos</a>
+          <a href="#contacto">Contacto</a>
+          <a class="btn btn-teal" href="https://tienda.drogueriaeyg.com.ar">Tienda online →</a>
+        </div>
+        <button class="menu-btn" id="menuBtn" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#areas">Qué distribuimos</a>
+        <a href="#contacto">Contacto</a>
+        <a class="cta-m" href="https://tienda.drogueriaeyg.com.ar">Tienda online →</a>
+      </div>
+      <div class="hero-inner">
+        <span class="badge">Rosario · desde 2019</span>
+        <h1>El respaldo detrás de la salud</h1>
+        <p>Distribución mayorista de medicamentos, insumos médicos y descartables para sanatorios, clínicas y centros de rehabilitación.</p>
+        <div class="hero-cta">
+          <a class="btn btn-accent" href="https://tienda.drogueriaeyg.com.ar">Ir a la tienda online</a>
+          <a class="btn btn-ghost" href="#nosotros">Conocer EyG</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="areas">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Qué distribuimos</span>
+        <h2>Una cadena, todo cubierto</h2>
+        <p>Del laboratorio a la institución, con la agilidad de un canal digital.</p>
+      </div>
+      <div class="grid3">
+        <div class="tile">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 34 34"><rect x="6" y="12" width="22" height="10" rx="5" fill="#fff"></rect><line x1="17" y1="12" x2="17" y2="22" stroke="#0AA89F" stroke-width="2"></line></svg></div>
+          <h3>Medicamentos</h3>
+          <p>Líneas de laboratorios líderes, con trazabilidad y cadena de frío.</p>
+        </div>
+        <div class="tile">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 30 30"><rect x="12" y="4" width="6" height="22" rx="2" fill="#fff"></rect><rect x="4" y="12" width="22" height="6" rx="2" fill="#fff"></rect></svg></div>
+          <h3>Insumos médicos</h3>
+          <p>Todo lo que la institución necesita, en tiempo y forma.</p>
+        </div>
+        <div class="tile">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 32 32"><path d="M16 5 C22 14 21 24 16 24 C11 24 10 14 16 5 Z" fill="#fff"></path></svg></div>
+          <h3>Descartables</h3>
+          <p>Guantes, jeringas, gasas y más, en volumen mayorista.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros" style="padding-top:0">
+    <div class="wrap">
+      <div class="about">
+        <div class="about-txt">
+          <span class="kicker">Nosotros</span>
+          <h2 style="margin-top:12px">Cerca de cada institución de salud</h2>
+          <p>Desde 2019 abastecemos a la red sanitaria de Rosario y la región con logística propia y una operación 100% digital.</p>
+          <div class="stats">
+            <div><div class="n">2019</div><div class="l">Desde</div></div>
+            <div><div class="n">6</div><div class="l">Áreas</div></div>
+            <div><div class="n">24h</div><div class="l">Pedidos online</div></div>
+          </div>
+        </div>
+        <div class="about-img"><img src="assets/img/ciencia-precision.png" alt="Precisión farmacéutica en semitono"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contacto">
+    <div class="wrap" style="padding-top:66px;padding-bottom:66px">
+      <h2>Hacé tu pedido online</h2>
+      <p>Catálogo completo, precios y stock en tiempo real, 24 horas.</p>
+      <a class="btn btn-accent" href="https://tienda.drogueriaeyg.com.ar">Entrar a la tienda online →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <svg width="150" viewBox="0 0 320 182" xmlns="http://www.w3.org/2000/svg" aria-label="Droguería EyG">
+          <text x="160" y="98" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="76"><tspan fill="#FFFFFF">E</tspan><tspan dx="6" fill="#5FC8BF">y</tspan><tspan dx="4" fill="#FFFFFF">G</tspan></text>
+          <rect x="76" y="123" width="168" height="30" rx="15" fill="none" stroke="#5FC8BF" stroke-width="1.3"></rect>
+          <text x="160" y="144" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="500" font-size="14" letter-spacing="4.5" fill="#EAF6F4">DROGUERÍA</text>
+        </svg>
+        <div class="foot-cols">
+          <div class="col">
+            <span>Empresa</span>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#areas">Qué distribuimos</a>
+          </div>
+          <div class="col">
+            <span>Tienda</span>
+            <a href="https://tienda.drogueriaeyg.com.ar">Catálogo online</a>
+          </div>
+          <div class="col">
+            <span>Contacto</span>
+            <span>Rosario, Santa Fe</span>
+            <span>ventas@drogueriaeyg.com.ar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copy">© 2026 Droguería EyG · El respaldo detrás de la salud</div>
+  </footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu');
+  if(!btn||!menu)return;
+  btn.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');});
+  });
+})();
+</script>
 </body>
 </html>
