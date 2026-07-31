@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="BwkyntThC8eKK37dMz0j6u4H1zC7SPZNMjxprWARsLY">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-600728287"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-600728287');
+</script>
 <title>Droguería EyG — El respaldo detrás de la salud</title>
 <meta name="description" content="Droguería EyG · Comercialización y distribución de medicamentos, insumos médicos y descartables para farmacias e instituciones de salud. Rosario, desde 2019.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2306413E'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='25' fill='%23ffffff'%3EE%3Ctspan fill='%235FC8BF'%3Ey%3C/tspan%3EG%3C/text%3E%3C/svg%3E">
@@ -17,7 +26,7 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"Pharmacy",
+  "@type":"WholesaleStore",
   "name":"Droguería EyG",
   "description":"Comercialización y distribución de medicamentos, insumos médicos y descartables para farmacias e instituciones de salud.",
   "url":"https://drogueriaeyg.com.ar/",
@@ -459,6 +468,49 @@
       nums.forEach(function(n){io.observe(n);});
     } else { nums.forEach(run); }
   }
+})();
+
+/* Conversiones Google Ads — clics en WhatsApp, teléfono y portal de pedidos */
+(function(){
+  var AW='AW-600728287';
+
+  /* Etiqueta de cada acción de conversión (Google Ads → Herramientas → Conversiones).
+     Va sólo lo que viene después de la barra, por ejemplo: 'AbC-D_efG-h1234'.
+     Con las etiquetas vacías no se envía nada y el sitio funciona igual. */
+  var LABELS={
+    whatsapp:'',
+    telefono:'',
+    tienda:''
+  };
+
+  function enviar(tipo,alTerminar){
+    var label=LABELS[tipo];
+    if(!label||typeof gtag!=='function'){if(alTerminar)alTerminar();return;}
+    var datos={send_to:AW+'/'+label};
+    if(alTerminar){
+      var hecho=false;
+      var salir=function(){if(hecho)return;hecho=true;alTerminar();};
+      datos.event_callback=salir;
+      setTimeout(salir,900);
+    }
+    gtag('event','conversion',datos);
+  }
+
+  document.addEventListener('click',function(ev){
+    var a=ev.target&&ev.target.closest&&ev.target.closest('a[href]');
+    if(!a)return;
+    var href=a.getAttribute('href')||'';
+
+    /* WhatsApp abre en otra pestaña y tel: lo toma el sistema: no hay que demorar la navegación */
+    if(href.indexOf('wa.me/')>-1)return enviar('whatsapp');
+    if(href.indexOf('tel:')===0)return enviar('telefono');
+
+    /* El portal navega en la misma pestaña: esperamos la confirmación antes de salir */
+    if(href.indexOf('drogueriaeyg.odoo.com')>-1&&LABELS.tienda){
+      ev.preventDefault();
+      enviar('tienda',function(){window.location.href=href;});
+    }
+  },true);
 })();
 </script>
 </body>
