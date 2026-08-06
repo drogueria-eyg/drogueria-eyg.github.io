@@ -12,6 +12,7 @@
   gtag('js', new Date());
   gtag('config', 'AW-600728287');
   gtag('config', 'G-4WQRZ32R4B');
+  gtag('config', 'G-4WQRZ32R4B');
 </script>
 <title>Droguería EyG — El respaldo detrás de la salud</title>
 <meta name="description" content="Droguería EyG · Comercialización y distribución de medicamentos, insumos médicos y descartables para farmacias e instituciones de salud. Rosario, desde 2019.">
@@ -484,6 +485,12 @@
     tienda:''
   };
 
+  /* GA4: se envía siempre, no depende de las etiquetas de Google Ads */
+  function ga4(nombre,metodo){
+    if(typeof gtag!=='function')return;
+    gtag('event',nombre,metodo?{method:metodo}:{});
+  }
+
   function enviar(tipo,alTerminar){
     var label=LABELS[tipo];
     if(!label||typeof gtag!=='function'){if(alTerminar)alTerminar();return;}
@@ -503,11 +510,13 @@
     var href=a.getAttribute('href')||'';
 
     /* WhatsApp abre en otra pestaña y tel: lo toma el sistema: no hay que demorar la navegación */
-    if(href.indexOf('wa.me/')>-1)return enviar('whatsapp');
-    if(href.indexOf('tel:')===0)return enviar('telefono');
+    if(href.indexOf('wa.me/')>-1){ga4('generate_lead','whatsapp');return enviar('whatsapp');}
+    if(href.indexOf('tel:')===0){ga4('generate_lead','telefono');return enviar('telefono');}
 
     /* El portal navega en la misma pestaña: esperamos la confirmación antes de salir */
-    if(href.indexOf('drogueriaeyg.odoo.com')>-1&&LABELS.tienda){
+    if(href.indexOf('drogueriaeyg.odoo.com')>-1){
+      ga4('portal_click');
+      if(!LABELS.tienda)return;
       ev.preventDefault();
       enviar('tienda',function(){window.location.href=href;});
     }
