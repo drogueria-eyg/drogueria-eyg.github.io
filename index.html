@@ -108,10 +108,12 @@
   .mobile-menu a{display:block;color:#EAF6F4;font-size:17px;font-weight:600;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.12)}
   .mobile-menu a.cta-m{border-bottom:0;margin-top:14px;text-align:center;background:var(--teal);color:#fff;border-radius:999px;padding:14px}
   .hero-inner{position:relative;max-width:620px;padding:44px 0 84px}
-  .badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#BFE6E0;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:22px}
+  .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#BFE6E0;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:22px}
+  .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--coral);flex-shrink:0}
   .hero h1{font-weight:800;font-size:46px;line-height:1.06;letter-spacing:-1.3px;color:#fff;margin:0 0 18px}
   .hero p{font-size:18px;line-height:1.55;color:#DCEEEA;margin:0 0 30px;max-width:520px}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-cta .btn{padding:13px 24px;font-size:15px}
 
   /* SECTIONS */
   section{padding:80px 0}
@@ -169,12 +171,12 @@
   .ct-primary-txt .ct-eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#8FE0D8;font-weight:700}
   .ct-primary-txt h3{font-weight:800;font-size:26px;letter-spacing:-.5px;margin:9px 0 6px;color:#fff}
   .ct-primary-txt p{margin:0;color:#CFEBE7;font-size:15px}
-  .ct-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
-  .ct-wa{display:inline-flex;align-items:center;gap:11px;background:var(--coral);color:#fff;font-weight:600;font-size:17px;padding:14px 24px;border-radius:999px;border:1px solid var(--coral);transition:background .18s,transform .18s}
+  .ct-actions{display:flex;flex-direction:column;gap:13px;align-items:center}
+  .ct-wa{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;font-weight:600;font-size:16px;padding:13px 22px;border-radius:999px;border:1px solid var(--coral);transition:background .18s,transform .18s}
   .ct-wa:hover{background:#DE7A4B;color:#fff;transform:translateY(-2px)}
   .ct-wa strong{font-weight:800}
   .ct-wa svg{width:21px;height:21px;flex-shrink:0}
-  .ct-mail{color:#CFEBE7;font-size:15px;font-weight:500;padding-left:2px}
+  .ct-mail{color:#CFEBE7;font-size:14.5px;font-weight:500;text-align:center}
   .ct-mail:hover{color:#fff}
   .ct-vendors-lead{text-align:center;color:var(--slate);font-size:15px;font-weight:600;margin:34px 0 18px}
   .ct-vendors{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
@@ -188,7 +190,7 @@
   .ct-list .ct-seller:first-child{border-top:0}
   .ct-seller .nm{font-weight:700;font-size:15.5px;color:var(--ink)}
   .ct-seller .num{display:inline-flex;align-items:center;gap:7px;color:var(--teal);font-weight:600;font-size:14.5px}
-  .ct-seller .num svg{width:16px;height:16px;color:#25D366}
+  .ct-seller .num svg{width:16px;height:16px}
   .ct-seller:hover{padding-left:8px}
   .ct-seller:hover .nm{color:var(--teal)}
   @media (max-width:860px){
@@ -224,7 +226,7 @@
   .foot-cols{display:flex;gap:56px;flex-wrap:wrap}
   .foot-cols .col span:first-child{color:#fff;font-weight:700;display:block;margin-bottom:10px}
   .foot-cols .col span{display:block;font-size:14px;margin-bottom:7px}
-  .foot-cols .col a{color:#9FB4B0}
+  .foot-cols .col a{color:#9FB4B0;font-size:14px}
   .foot-cols .col a:hover{color:#BFF0EA}
   .copy{border-top:1px solid rgba(255,255,255,.1);padding:20px 0;font-size:13px;color:#6E827E;text-align:center}
 
@@ -285,12 +287,12 @@
         <a class="cta-m" href="https://drogueriaeyg.odoo.com/web/login">Acceso clientes →</a>
       </div>
       <div class="hero-inner">
-        <span class="badge">Rosario · desde 2019</span>
+        <span class="badge"><span class="dot"></span>Rosario · desde 2019</span>
         <h1>El respaldo detrás de la salud</h1>
         <p>Abastecemos a instituciones de salud y farmacias de Rosario y la región con medicamentos, insumos médicos y descartables, con la agilidad de un canal digital.</p>
         <div class="hero-cta">
           <a class="btn btn-accent" href="https://wa.me/5493413518191?text=Hola%2C%20quiero%20abrir%20una%20cuenta%20en%20Droguer%C3%ADa%20EyG." target="_blank" rel="noopener">Abrir cuenta</a>
-          <a class="btn btn-ghost" href="https://drogueriaeyg.odoo.com/web/login">Acceso clientes</a>
+          <a class="btn btn-ghost" href="#nosotros">Conocer EyG</a>
         </div>
       </div>
     </div>
@@ -368,7 +370,7 @@
           <p>Te atendemos de lunes a viernes, de 8 a 17 h.</p>
         </div>
         <div class="ct-actions">
-          <a class="ct-wa" href="https://wa.me/5493413518191" target="_blank" rel="noopener">
+          <a class="ct-wa" href="https://wa.me/5493413518191?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.25 8.24-1.52 0-3-.41-4.29-1.18l-.31-.18-3.11.82.83-3.03-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24zm4.71 9.87c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.09-.4-2.07-1.28-.77-.68-1.28-1.53-1.43-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44l-.49-.01c-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.66.13.17 1.81 2.77 4.39 3.88.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/></svg>
             <span>WhatsApp <strong>341 351-8191</strong></span>
           </a>
@@ -381,7 +383,7 @@
       <div class="ct-vendors">
         <div class="ct-group">
           <div class="ct-group-head">
-            <span class="ct-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M6 21V7l6-4 6 4v14M10 10h4M10 14h4"/></svg></span>
+            <span class="ct-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v15"/><path d="M2 21h20"/><path d="M12 8.5v4M10 10.5h4"/><path d="M10 21v-3h4v3"/></svg></span>
             <div><h4>Instituciones</h4><span>Instituciones de salud</span></div>
           </div>
           <div class="ct-list">
@@ -449,10 +451,6 @@
             <span>Empresa</span>
             <a href="#nosotros">Nosotros</a>
             <a href="#areas">Qué distribuimos</a>
-          </div>
-          <div class="col">
-            <span>Tienda</span>
-            <a href="https://drogueriaeyg.odoo.com/">Catálogo online</a>
           </div>
           <div class="col">
             <span>Contacto</span>
