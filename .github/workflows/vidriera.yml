@@ -1,0 +1,43 @@
+name: Vidriera de productos (auto)
+
+# Regenera la vidriera pública (/productos) a partir de las ventas y el stock de Odoo.
+# Corre todos los días y también se puede disparar a mano desde la pestaña Actions.
+
+on:
+  schedule:
+    - cron: '20 9 * * *'   # 09:20 UTC ≈ 06:20 Argentina, todos los días
+  workflow_dispatch:        # botón "Run workflow" manual
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vidriera
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Traer el repo
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generar la vidriera
+        run: node .github/vidriera/build.mjs
+
+      - name: Publicar si hubo cambios
+        run: |
+          git config user.name  "Vidriera EyG"
+          git config user.email "rosaint.ar@gmail.com"
+          git add productos sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Sin cambios hoy."
+          else
+            git commit -m "Vidriera: refresco automático de productos y stock ($(date -u +%F))"
+            git push
+          fi
