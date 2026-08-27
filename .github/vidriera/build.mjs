@@ -7,7 +7,7 @@ const RPC='https://yxotopoklgjowcudveoj.supabase.co/functions/v1/odoo-rpc';
 const BASE='https://www.drogueriaeyg.com.ar';
 const ODOO_IMG='https://drogueriaeyg.odoo.com/web/image/product.product/';
 const LOGIN='https://drogueriaeyg.odoo.com/web/login';
-const WA='https://wa.me/5493413518191?text='+encodeURIComponent('Hola, quiero solicitar acceso al portal mayorista de Droguería EyG para ver precios y hacer pedidos.');
+const WA='https://wa.me/5493412809081?text='+encodeURIComponent('Hola, quiero solicitar acceso al portal mayorista de Droguería EyG para ver precios y hacer pedidos.');
 const TOPN=20;                 // top 20 más vendidos
 const SINCE='2025-08-21';      // ventana de ventas (~12 meses; se puede mover)
 const OUT='productos', IMGDIR=OUT+'/img';
@@ -97,7 +97,7 @@ const WAICON='<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.
 const header=()=>`<div class="top"><div class="wrap"><a class="brand" href="/"><span class="mono">E<span class="y">y</span>G</span> Droguería EyG</a><a class="btn ghost" href="${LOGIN}">Ingresar a la tienda</a></div></div>`;
 const footer=()=>`<div class="footer"><div class="wrap">
 <div><h4>Droguería EyG</h4>El respaldo detrás de la salud.<br>Distribución mayorista para farmacias e instituciones.<br>Rosario, Santa Fe · desde 2019.</div>
-<div><h4>Contacto</h4>Av. San Martín 3035, Rosario<br>WhatsApp: <a href="${WA}">341 351-8191</a><br><a href="mailto:contacto@drogueriaeyg.com.ar">contacto@drogueriaeyg.com.ar</a></div>
+<div><h4>Contacto</h4>Av. San Martín 3035, Rosario<br>WhatsApp: <a href="${WA}">341 280-9081</a><br><a href="mailto:contacto@drogueriaeyg.com.ar">contacto@drogueriaeyg.com.ar</a></div>
 <div><h4>Accesos</h4><a href="/">Inicio</a><br><a href="/productos/">Productos</a><br><a href="${LOGIN}">Portal mayorista</a></div>
 </div></div>`;
 

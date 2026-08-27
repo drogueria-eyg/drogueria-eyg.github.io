@@ -40,7 +40,7 @@
   "url":"https://www.drogueriaeyg.com.ar/",
   "logo":"https://www.drogueriaeyg.com.ar/icon-512.png",
   "image":"https://www.drogueriaeyg.com.ar/og.jpg",
-  "telephone":"+54 9 341 351-8191",
+  "telephone":"+54 9 341 280-9081",
   "email":"contacto@drogueriaeyg.com.ar",
   "foundingDate":"2019",
   "address":{
@@ -59,7 +59,7 @@
   },
   "areaServed":"Rosario y la región",
   "contactPoint":[
-    {"@type":"ContactPoint","contactType":"ventas","name":"Ventas","telephone":"+54 9 341 351-8191","email":"ventas@drogueriaeyg.com.ar","availableLanguage":"es"}
+    {"@type":"ContactPoint","contactType":"ventas","name":"Ventas","telephone":"+54 9 341 280-9081","email":"ventas@drogueriaeyg.com.ar","availableLanguage":"es"}
   ]
 }
 </script>
@@ -167,39 +167,64 @@
   .c-seller .c-name{font-size:15px}
 
   /* CONTACTO · rediseño */
-  .ct-primary{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;background:linear-gradient(118deg,#06413E,#048782 58%,#0A3D5E);border-radius:22px;padding:34px 40px;color:#fff;box-shadow:0 18px 40px rgba(6,65,62,.18)}
-  .ct-primary-txt .ct-eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#8FE0D8;font-weight:700}
-  .ct-primary-txt h3{font-weight:800;font-size:26px;letter-spacing:-.5px;margin:9px 0 6px;color:#fff}
-  .ct-primary-txt p{margin:0;color:#CFEBE7;font-size:15px}
-  .ct-actions{display:flex;flex-direction:column;gap:13px;align-items:center}
+  .ct-primary{position:relative;overflow:hidden;display:flex;flex-wrap:wrap;align-items:center;gap:30px;background:linear-gradient(118deg,#06413E,#048782 58%,#0A3D5E);border-radius:22px;padding:34px 40px;color:#fff;box-shadow:0 18px 40px rgba(6,65,62,.18)}
+  .ct-primary::after{content:"";position:absolute;right:-90px;bottom:-150px;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,rgba(95,200,191,.26),rgba(95,200,191,0) 68%);pointer-events:none}
+  .ct-primary-txt{position:relative;z-index:1;flex:1 1 340px;min-width:260px}
+  .ct-primary-txt h3{font-weight:800;font-size:26px;letter-spacing:-.5px;margin:10px 0 8px;color:#fff}
+  .ct-primary-txt p{margin:0;color:#CFEBE7;font-size:15px;max-width:52ch}
+  .ct-live{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#8FE0D8;font-weight:700}
+  .ct-live b{width:8px;height:8px;border-radius:50%;background:#7BE0A8;animation:dotPulse 2.2s ease-out infinite}
+  @keyframes dotPulse{0%{box-shadow:0 0 0 0 rgba(123,224,168,.65)}70%{box-shadow:0 0 0 9px rgba(123,224,168,0)}100%{box-shadow:0 0 0 0 rgba(123,224,168,0)}}
+  .ct-perks{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .ct-perks li{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.17);color:#EAF7F5;font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px}
+  .ct-perks svg{width:14px;height:14px;color:#8FE0D8;flex-shrink:0}
+  /* orbe del asistente */
+  .ct-orb{position:relative;z-index:1;flex:0 0 auto;width:136px;height:136px;display:grid;place-items:center}
+  .ct-orb i{position:absolute;border-radius:50%;display:block}
+  .ct-orb .orb-core{width:90px;height:90px;background:radial-gradient(circle at 33% 27%,#EFFCFA,#8FE0D8 30%,#0AA89F 62%,#04635F 100%);box-shadow:0 0 34px rgba(95,200,191,.55),inset -8px -12px 26px rgba(4,65,62,.5);animation:orbPulse 4.6s ease-in-out infinite}
+  .ct-orb .orb-core::after{content:"";position:absolute;inset:5px;border-radius:50%;background:conic-gradient(from 0deg,rgba(255,255,255,.45),rgba(255,255,255,0) 30%,rgba(255,255,255,.2) 56%,rgba(255,255,255,0) 82%);animation:orbSpin 9s linear infinite}
+  .ct-orb .orb-ring{width:112px;height:112px;border:1px solid rgba(143,224,216,.5);animation:orbWave 4s ease-out infinite}
+  .ct-orb .orb-ring.r2{animation-delay:2s}
+  @keyframes orbPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+  @keyframes orbSpin{to{transform:rotate(360deg)}}
+  @keyframes orbWave{0%{transform:scale(.78);opacity:.8}100%{transform:scale(1.3);opacity:0}}
+  @media (prefers-reduced-motion:reduce){.ct-orb .orb-core,.ct-orb .orb-core::after,.ct-orb .orb-ring,.ct-live b{animation:none}}
+  .ct-actions{position:relative;z-index:1;display:flex;flex-direction:column;gap:13px;align-items:center}
   .ct-wa{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;font-weight:600;font-size:16px;padding:13px 22px;border-radius:999px;border:1px solid var(--coral);transition:background .18s,transform .18s}
   .ct-wa:hover{background:#DE7A4B;color:#fff;transform:translateY(-2px)}
   .ct-wa strong{font-weight:800}
   .ct-wa svg{width:21px;height:21px;flex-shrink:0}
   .ct-mail{color:#CFEBE7;font-size:14.5px;font-weight:500;text-align:center}
   .ct-mail:hover{color:#fff}
-  .ct-vendors-lead{text-align:center;color:var(--slate);font-size:15px;font-weight:600;margin:34px 0 18px}
-  .ct-vendors{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
-  .ct-group{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 26px 10px}
-  .ct-group-head{display:flex;align-items:center;gap:14px;padding-bottom:16px;margin-bottom:4px;border-bottom:1px solid var(--water)}
+  /* áreas administrativas */
+  .ct-areas-lead{text-align:center;color:var(--slate);font-size:15px;font-weight:600;margin:34px 0 18px}
+  .ct-areas{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+  .ct-area{display:flex;flex-direction:column;gap:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 26px;transition:transform .16s,border-color .16s,box-shadow .16s}
+  .ct-area:hover{transform:translateY(-3px);border-color:var(--aqua);box-shadow:0 14px 30px rgba(6,65,62,.09)}
+  .ct-area-head{display:flex;align-items:center;gap:14px}
   .ct-ic{width:46px;height:46px;flex-shrink:0;border-radius:13px;background:var(--water);display:flex;align-items:center;justify-content:center;color:var(--teal)}
   .ct-ic svg{width:24px;height:24px}
-  .ct-group-head h4{margin:0;font-weight:800;font-size:19px;letter-spacing:-.3px;color:var(--ink)}
-  .ct-group-head span{font-size:13px;color:var(--muted)}
-  .ct-seller{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 2px;border-top:1px solid var(--water);transition:padding-left .16s}
-  .ct-list .ct-seller:first-child{border-top:0}
-  .ct-seller .nm{font-weight:700;font-size:15.5px;color:var(--ink)}
-  .ct-seller .num{display:inline-flex;align-items:center;gap:7px;color:var(--teal);font-weight:600;font-size:14.5px}
-  .ct-seller .num svg{width:16px;height:16px}
-  .ct-seller:hover{padding-left:8px}
-  .ct-seller:hover .nm{color:var(--teal)}
+  .ct-area-head h4{margin:0;font-weight:800;font-size:19px;letter-spacing:-.3px;color:var(--ink)}
+  .ct-area-head span{font-size:13px;color:var(--muted)}
+  .ct-area p{margin:0;color:var(--slate);font-size:14.5px}
+  .ct-hours{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);font-weight:600}
+  .ct-hours svg{width:15px;height:15px;flex-shrink:0}
+  .ct-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:4px}
+  .ct-chip{display:inline-flex;align-items:center;gap:8px;padding:10px 17px;border-radius:999px;font-size:14px;font-weight:700;border:1px solid var(--line);background:var(--water);color:var(--teal);transition:background .16s,border-color .16s,color .16s}
+  .ct-chip svg{width:16px;height:16px;flex-shrink:0}
+  .ct-chip:hover{border-color:var(--aqua);background:#DCF0EC}
+  .ct-chip.wa{background:var(--teal);border-color:var(--teal);color:#fff}
+  .ct-chip.wa:hover{background:var(--deep);border-color:var(--deep);color:#fff}
   @media (max-width:860px){
-    .ct-primary{padding:26px 22px;gap:18px}
+    .ct-primary{padding:26px 22px;gap:20px;justify-content:center;text-align:center}
+    .ct-primary-txt{text-align:center}
     .ct-primary-txt h3{font-size:22px}
+    .ct-primary-txt p{margin-left:auto;margin-right:auto}
+    .ct-perks{justify-content:center}
     .ct-actions{align-items:stretch;width:100%}
     .ct-wa{justify-content:center}
     .ct-mail{text-align:center}
-    .ct-vendors{grid-template-columns:1fr}
+    .ct-areas{grid-template-columns:1fr}
   }
 
   /* UBICACIÓN */
@@ -291,7 +316,7 @@
         <h1>El respaldo detrás de la salud</h1>
         <p>Abastecemos a instituciones de salud y farmacias de Rosario y la región con medicamentos, insumos médicos y descartables, con la agilidad de un canal digital.</p>
         <div class="hero-cta">
-          <a class="btn btn-accent" href="https://wa.me/5493413518191?text=Hola%2C%20quiero%20abrir%20una%20cuenta%20en%20Droguer%C3%ADa%20EyG." target="_blank" rel="noopener">Abrir cuenta</a>
+          <a class="btn btn-accent" href="https://wa.me/5493412809081?text=Hola%2C%20quiero%20abrir%20una%20cuenta%20en%20Droguer%C3%ADa%20EyG." target="_blank" rel="noopener">Abrir cuenta</a>
           <a class="btn btn-ghost" href="#nosotros">Conocer EyG</a>
         </div>
       </div>
@@ -359,48 +384,60 @@
       <div class="sec-head">
         <span class="kicker">Contacto</span>
         <h2>Hablemos</h2>
-        <p>Escribinos por WhatsApp o correo. Estamos para acompañar a tu farmacia o institución.</p>
+        <p>Un WhatsApp para pedidos, siempre disponible, y una vía directa para cada área administrativa.</p>
       </div>
 
-      <!-- Bloque principal -->
+      <!-- Bloque principal · Ventas -->
       <div class="ct-primary">
+        <div class="ct-orb" aria-hidden="true"><i class="orb-ring"></i><i class="orb-ring r2"></i><i class="orb-core"></i></div>
         <div class="ct-primary-txt">
-          <span class="ct-eyebrow">Ventas y pedidos</span>
-          <h3>Hacé tu pedido por WhatsApp</h3>
-          <p>Te atendemos de lunes a viernes, de 8 a 17 h.</p>
+          <span class="ct-live"><b></b> Siempre en línea</span>
+          <h3>Hacé tu pedido por WhatsApp, a la hora que sea</h3>
+          <p>Del otro lado hay un asistente que contesta en el momento: de madrugada, un domingo o un feriado. Consultá precios y disponibilidad y armá tu pedido cuando te quede cómodo. Detrás está tu comercial asignado, trabajando junto al asistente: la misma persona de siempre, siguiendo tu cuenta de cerca.</p>
+          <ul class="ct-perks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Te responde al instante</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Todos los días del año</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Precios y stock al momento</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Tu pedido queda cargado</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Con el respaldo de tu comercial</li>
+          </ul>
         </div>
         <div class="ct-actions">
-          <a class="ct-wa" href="https://wa.me/5493413518191?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
+          <a class="ct-wa" href="https://wa.me/5493412809081?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.25 8.24-1.52 0-3-.41-4.29-1.18l-.31-.18-3.11.82.83-3.03-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24zm4.71 9.87c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.09-.4-2.07-1.28-.77-.68-1.28-1.53-1.43-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44l-.49-.01c-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.66.13.17 1.81 2.77 4.39 3.88.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/></svg>
-            <span>WhatsApp <strong>341 351-8191</strong></span>
+            <span>WhatsApp <strong>341 280-9081</strong></span>
           </a>
           <a class="ct-mail" href="mailto:ventas@drogueriaeyg.com.ar">✉ ventas@drogueriaeyg.com.ar</a>
         </div>
       </div>
 
-      <!-- Vendedores -->
-      <p class="ct-vendors-lead">O escribile directo a tu vendedor/a</p>
-      <div class="ct-vendors">
-        <div class="ct-group">
-          <div class="ct-group-head">
-            <span class="ct-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v15"/><path d="M2 21h20"/><path d="M12 8.5v4M10 10.5h4"/><path d="M10 21v-3h4v3"/></svg></span>
-            <div><h4>Instituciones</h4><span>Instituciones de salud</span></div>
+      <!-- Áreas administrativas -->
+      <p class="ct-areas-lead">¿Es un tema administrativo? Escribile directo al área</p>
+      <div class="ct-areas">
+        <div class="ct-area">
+          <div class="ct-area-head">
+            <span class="ct-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2.5"/><path d="M2 10.5h20"/><path d="M6 15h4"/></svg></span>
+            <div><h4>Cobranzas</h4><span>Cuenta corriente y pagos</span></div>
           </div>
-          <div class="ct-list">
-            <a class="ct-seller" href="https://wa.me/5493416909362" target="_blank" rel="noopener"><span class="nm">Natividad</span><span class="num"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.71 11.54c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.09-.4-2.07-1.28-.77-.68-1.28-1.53-1.43-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44l-.49-.01c-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.66.13.17 1.81 2.77 4.39 3.88.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/></svg>341 690-9362</span></a>
-            <a class="ct-seller" href="https://wa.me/5493412727577" target="_blank" rel="noopener"><span class="nm">Ruth</span><span class="num"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.71 11.54c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.09-.4-2.07-1.28-.77-.68-1.28-1.53-1.43-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44l-.49-.01c-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.66.13.17 1.81 2.77 4.39 3.88.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/></svg>341 272-7577</span></a>
+          <p>Estado de cuenta, vencimientos, envío de comprobantes de pago y acuerdos.</p>
+          <span class="ct-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>Lunes a viernes, de 8 a 17 h</span>
+          <div class="ct-links">
+            <!-- COMPLETAR: cuando esté el WhatsApp propio de Cobranzas, reemplazar el número de abajo por el suyo -->
+            <a class="ct-chip wa" href="https://wa.me/5493412809081?text=Hola%2C%20necesito%20hablar%20con%20Cobranzas." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.71 11.54c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.09-.4-2.07-1.28-.77-.68-1.28-1.53-1.43-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44l-.49-.01c-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.66.13.17 1.81 2.77 4.39 3.88.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/></svg>WhatsApp</a>
+            <a class="ct-chip" href="mailto:cobranzas@drogueriaeyg.com.ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg>Correo</a>
           </div>
         </div>
-        <div class="ct-group">
-          <div class="ct-group-head">
-            <span class="ct-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg></span>
-            <div><h4>Farmacias</h4><span>Farmacias y puntos de venta</span></div>
+        <div class="ct-area">
+          <div class="ct-area-head">
+            <span class="ct-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2.5h9l4 4V21l-2.5-1.5L14 21l-2-1.5L10 21l-2.5-1.5L5 21V5a2.5 2.5 0 0 1 1-2.5z"/><path d="M9 9h6M9 13h6"/></svg></span>
+            <div><h4>Facturación</h4><span>Comprobantes y datos fiscales</span></div>
           </div>
-          <div class="ct-list">
-            <a class="ct-seller" href="https://wa.me/5493416820105" target="_blank" rel="noopener"><span class="nm">Maricruz</span><span class="num"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.71 11.54c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.09-.4-2.07-1.28-.77-.68-1.28-1.53-1.43-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44l-.49-.01c-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.66.13.17 1.81 2.77 4.39 3.88.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/></svg>341 682-0105</span></a>
-            <a class="ct-seller" href="https://wa.me/5493413518185" target="_blank" rel="noopener"><span class="nm">Claudia</span><span class="num"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.71 11.54c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.09-.4-2.07-1.28-.77-.68-1.28-1.53-1.43-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44l-.49-.01c-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.66.13.17 1.81 2.77 4.39 3.88.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/></svg>341 351-8185</span></a>
-            <a class="ct-seller" href="https://wa.me/5493417536437" target="_blank" rel="noopener"><span class="nm">Samanta</span><span class="num"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.71 11.54c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.09-.4-2.07-1.28-.77-.68-1.28-1.53-1.43-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44l-.49-.01c-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.66.13.17 1.81 2.77 4.39 3.88.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/></svg>341 753-6437</span></a>
-            <a class="ct-seller" href="https://wa.me/5493413518275" target="_blank" rel="noopener"><span class="nm">Antonella</span><span class="num"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.71 11.54c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.09-.4-2.07-1.28-.77-.68-1.28-1.53-1.43-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44l-.49-.01c-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.66.13.17 1.81 2.77 4.39 3.88.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/></svg>341 351-8275</span></a>
+          <p>Facturas, notas de crédito, remitos y actualización de datos fiscales.</p>
+          <span class="ct-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>Lunes a viernes, de 8 a 17 h</span>
+          <div class="ct-links">
+            <!-- COMPLETAR: cuando esté el WhatsApp propio de Facturación, reemplazar el número de abajo por el suyo -->
+            <a class="ct-chip wa" href="https://wa.me/5493412809081?text=Hola%2C%20necesito%20hablar%20con%20Facturaci%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.71 11.54c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.09-.4-2.07-1.28-.77-.68-1.28-1.53-1.43-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44l-.49-.01c-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.66.13.17 1.81 2.77 4.39 3.88.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/></svg>WhatsApp</a>
+            <a class="ct-chip" href="mailto:facturacion@drogueriaeyg.com.ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg>Correo</a>
           </div>
         </div>
       </div>
@@ -421,7 +458,7 @@
           </div>
           <div class="loc-row">
             <div class="loc-ic">✆</div>
-            <div><div class="lbl">Teléfono</div><a class="val" href="tel:+5493413518191">0341 351-8191</a></div>
+            <div><div class="lbl">Teléfono</div><a class="val" href="tel:+5493412809081">341 280-9081</a></div>
           </div>
           <div class="loc-row">
             <div class="loc-ic">◷</div>
