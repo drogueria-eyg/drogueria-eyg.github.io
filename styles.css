@@ -111,3 +111,6 @@ html{scroll-padding-top:132px}
   .footer-top .back-top{grid-column:2;grid-row:3}.footer-bottom{font-size:11px}.credits-button{font-size:12px}
 }
 @media(max-width:360px){.portal-route{padding:21px}.portal-route li{gap:13px}.portal-route h3{font-size:20px}.territory-photo>img{height:300px}.territory-caption{bottom:105px}.direct-contacts article .direct-links .direct-email{font-size:12px}}
+
+/* Flechas vectoriales: misma forma y color en escritorio, iOS y Android. */
+.arrow-icon{display:inline-block;width:1em;height:1em;flex:none;vertical-align:-.12em;pointer-events:none}
