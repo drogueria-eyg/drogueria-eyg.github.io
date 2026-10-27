@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
-  <circle cx="80" cy="80" r="80" fill="#048782"></circle>
-  <text x="80" y="98" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="54"><tspan fill="#FFFFFF">E</tspan><tspan dx="4" fill="#BFF0EA">y</tspan><tspan dx="3" fill="#FFFFFF">G</tspan></text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" fill="#064E4D" role="img" aria-label="Droguería EyG"><rect width="320" height="320" rx="64" fill="#064E4D"/><g fill="#F5F3EC"><path d="M224 32H96A64 64 0 0 0 32 96V224A64 64 0 0 0 96 288H224A64 64 0 0 0 288 224V136H168V184H240V224A16 16 0 0 1 224 240H96A16 16 0 0 1 80 224V184H120V136H80V96A16 16 0 0 1 96 80H224A16 16 0 0 1 240 96V104H288V96A64 64 0 0 0 224 32Z"/></g></svg>
